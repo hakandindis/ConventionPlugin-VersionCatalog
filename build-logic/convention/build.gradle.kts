@@ -1,7 +1,5 @@
 plugins {
     `kotlin-dsl`
-    id("java-library")
-    alias(libs.plugins.jetbrains.kotlin.jvm)
 }
 
 dependencies {
@@ -11,14 +9,9 @@ dependencies {
 
 gradlePlugin {
     plugins {
-        register("moduleConfigPlugin") {
-            id = "hakandindis.module.config"
-            implementationClass = "ModuleConfigPlugin"
-        }
-
-        register("composeConfigPlugin") {
-            id = "hakandindis.compose.config"
-            implementationClass = "ComposeConfigPlugin"
+        register("flavorsConfigConventionPlugin") {
+            id = "hakandindis.flavors.config"
+            implementationClass = "FlavorsConfigConventionPlugin"
         }
     }
 }
